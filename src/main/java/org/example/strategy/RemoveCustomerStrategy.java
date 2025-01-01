@@ -16,7 +16,6 @@ public class RemoveCustomerStrategy implements MenuStrategy {
               customer = Bank.customers[i];
             if (customer.getCustomerNo().equals(customerNo)){
                     Bank.customers[i] = null;
-                  // Bank.customers[i] = Bank.customers[i++];
             }
         }
 
