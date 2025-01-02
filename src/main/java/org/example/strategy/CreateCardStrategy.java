@@ -17,8 +17,8 @@ public class CreateCardStrategy implements MenuStrategy{
         for (int i=0; i< Bank.customerLength; i++){
             Customer customer = Bank.customers[i];
             if (customerNo.equals(customer.getCustomerNo())) {
-                System.out.println("Card number: ");
                 Long cardNumber = 1000000000000000L + (long) (Math.random() * 9000000000000000L);
+                System.out.println("Card number: "+cardNumber);
                 for (CurrencyEnum currencyEnum: CurrencyEnum.values()){
                     System.out.println(currencyEnum.getValue()+"."+currencyEnum.getDescription());
                 }
