@@ -9,8 +9,11 @@ public class CreateCustomerStrategy implements MenuStrategy{
     @Override
     public void execute(){
         Scanner sc= new Scanner(System.in);
+        System.out.println("Write the customerNo: ");
         Integer customerNo = sc.nextInt();
+        System.out.println("Write the name: ");
         String name = sc.next();
+        System.out.println("Write the surname: ");
         String surname = sc.next();
 
         Customer customer = new Customer(customerNo, name, surname);

@@ -7,9 +7,10 @@ public class ShowAllCustomerStrategy implements MenuStrategy{
     @Override
     public void execute(){
         Customer customer;
+        System.out.println("All customers: ");
         for (int i=0; i< Bank.customerLength; i++){
             customer = Bank.customers[i];
-            System.out.println(i+"-ci customer: "+customer);
+            System.out.println(i+1+"-ci customer: "+customer);
         }
     }
 }

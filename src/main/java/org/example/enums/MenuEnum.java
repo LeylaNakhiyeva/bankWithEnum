@@ -1,18 +1,15 @@
 package org.example.enums;
 
 import lombok.Getter;
-import org.example.strategy.CreateCustomerStrategy;
-import org.example.strategy.MenuStrategy;
-import org.example.strategy.RemoveCustomerStrategy;
-import org.example.strategy.ShowAllCustomerStrategy;
+import org.example.strategy.*;
 
 @Getter
 public enum MenuEnum {
     CREATE_CUSTOMER(1, "Create customer", new CreateCustomerStrategy()),
     REMOVE_CUSTOMER(2, "Remove customer", new RemoveCustomerStrategy()),
-//    UPDATE_CUSTOMER(3, "Update customer", ),
-    SHOW_ALL_CUSTOMER(4, "Show all customer", new ShowAllCustomerStrategy());
-//    CREATE_CARD(5, "Create card", ),
+    UPDATE_CUSTOMER(3, "Update customer", new UpdateCustomerStrategy()),
+    SHOW_ALL_CUSTOMER(4, "Show all customer", new ShowAllCustomerStrategy()),
+    CREATE_CARD(5, "Create card", new CreateCardStrategy());
 //    UPDATE_CARD(6, "Update card", ),
 //    BLOCK_CARD(7, "Block card", ),
 //    UNBLOCK_CARD(8, "Unblock card", ),
