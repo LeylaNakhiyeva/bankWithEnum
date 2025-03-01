@@ -2,10 +2,12 @@ package org.example.util;
 
 import org.example.enums.MenuEnum;
 
+import java.util.Arrays;
+
 public class MenuUtil {
     public static void showMenuItems(){
-        for (MenuEnum menuEnum : MenuEnum.values()){
+        Arrays.stream(MenuEnum.values()).forEach(menuEnum -> {
             System.out.println(menuEnum.getValue()+"."+menuEnum.getDescription());
-        }
+        });
     }
 }

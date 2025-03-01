@@ -2,6 +2,8 @@ package org.example.enums;
 
 import lombok.Getter;
 
+import java.util.Arrays;
+
 @Getter
 public enum CurrencyEnum {
     AZN(1, "AZN"),
@@ -16,12 +18,9 @@ public enum CurrencyEnum {
         this.description = description;
     }
     public static CurrencyEnum getCurrencyByValue(int value){
-        for (CurrencyEnum currencyEnum: CurrencyEnum.values()){
-            if (currencyEnum.getValue()==value){
-                return currencyEnum;
-            }
-        }
-        throw new IllegalArgumentException("Invalid option "+value+"!");
+        return Arrays.stream(CurrencyEnum.values()).filter(enumObject ->enumObject.getValue()==value)
+                .findFirst()
+                .orElseThrow(()-> new IllegalArgumentException("Invalid option : "+value));
     }
 
 }

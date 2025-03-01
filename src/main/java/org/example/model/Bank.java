@@ -1,6 +1,9 @@
 package org.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bank {
-    public static Customer[] customers = new Customer[10];
-    public static int customerLength = 0;
+    public static List<Customer> customers = new ArrayList<>();
+
 }

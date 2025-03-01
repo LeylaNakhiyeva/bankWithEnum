@@ -1,7 +1,9 @@
 package org.example.strategy;
 
+import org.example.constants.FileConstants;
 import org.example.model.Bank;
 import org.example.model.Customer;
+import org.example.util.FileUtils;
 
 import java.util.Scanner;
 
@@ -9,14 +11,16 @@ public class CreateCustomerStrategy implements MenuStrategy{
     @Override
     public void execute(){
         Scanner sc= new Scanner(System.in);
-        System.out.println("Write the customerNo: ");
+        System.out.print("Write the customerNo: ");
         Integer customerNo = sc.nextInt();
-        System.out.println("Write the name: ");
+        System.out.print("Write the name: ");
         String name = sc.next();
-        System.out.println("Write the surname: ");
+        System.out.print("Write the surname: ");
         String surname = sc.next();
 
         Customer customer = new Customer(customerNo, name, surname);
-        Bank.customers[Bank.customerLength++]=customer;
+        Bank.customers.add(customer);
+
+      //  FileUtils.writeObjectToFile(FileConstants.CUSTOMER_FILE_NAME, Bank.customers);
     }
 }
